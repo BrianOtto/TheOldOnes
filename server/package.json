@@ -1,0 +1,24 @@
+{
+    "name": "The Old Ones - Server",
+    "version": "0.1.0",
+    "description": "3D MMORPG in JavaScript",
+    "keywords": [
+        "3D",
+        "MMO",
+        "RPG",
+        "MMORPG",
+        "Server"
+    ],
+    "author": "Brian Otto",
+    "license": "ISC",
+    "type": "module",
+    "main": "index.js",
+    "scripts": {
+        "start": "node ./index.js"
+    },
+    "dependencies": {
+        "express": "^4.18.2",
+        "gl-matrix": "^3.4.3",
+        "socket.io": "^4.5.4"
+    }
+}
