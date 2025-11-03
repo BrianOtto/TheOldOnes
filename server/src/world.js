@@ -3,8 +3,8 @@ import { performance } from 'perf_hooks'
 
 import { entity } from './entity.js'
 
-import { shared_grids } from '../../client/shared/grids.js'
-import { shared_noise } from '../../client/shared/noise.js'
+import { shared_grids } from '../../client/lib/shared/grids.js'
+import { shared_noise } from '../../client/lib/shared/noise.js'
 
 
 export const world = (() => {

@@ -61,7 +61,7 @@ export const entity_ai = (() => {
             const nearby = 
                 this.entity.getNearby(50.0)
                     .filter(e => e.stats.health > 0)
-                    .filter(e => e.client !== null)
+                    .filter(e => e.client.player !== null)
             
             if (nearby.length > 0) {
                 this.parent.setState(new State_FollowToAttack(nearby[0]))

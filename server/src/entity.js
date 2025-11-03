@@ -3,7 +3,7 @@ import { quat, vec3 } from 'gl-matrix'
 import { entity_action } from './entity-action.js'
 import { entity_ai } from './entity-ai.js'
 
-import { defs } from '../../client/shared/defs.js'
+import { defs } from '../../client/lib/shared/defs.js'
 
 export const entity = (() => {
 
@@ -64,12 +64,12 @@ export const entity = (() => {
             this.gridClient = this.grid.NewClient([this.position[0], this.position[2]], [10, 10])
             this.gridClient.entity = this
                 
-            if (client.player) {
-                this.client = client
-                this.client.onMessage = (e, d) => this.onMessage(e, d)
-                this.client.send('world.player', this.createPlayerPacket())
-                this.client.send('world.stats', this.createStatsPacket())
-            } else {
+            this.client = client
+            this.client.onMessage = (e, d) => this.onMessage(e, d)
+            this.client.send('world.player', this.createPlayerPacket())
+            this.client.send('world.stats', this.createStatsPacket())
+            
+            if (client.mobile) {
                 // mobiles never time out
                 this.#timeout = 1000.0
             }
